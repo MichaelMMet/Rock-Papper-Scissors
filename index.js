@@ -1,4 +1,6 @@
-let playerChoice = prompt("Enter Rock, Paper, or Scissors");
+//let playerChoice = prompt("Enter Rock, Paper, or Scissors");
+let computerScore = 0;
+let playerScore = 0;
 
 //computer picks between rock, paper, or sciccors at random
 function getComputerChoice() {
@@ -12,6 +14,11 @@ function getComputerChoice() {
     }
 }
 
+function getPlayerChoice(){
+    let playerChoice = prompt("Enter Rock, Paper, or Scissors");
+    return playerChoice;
+}
+
 function equalsIgnoreCase(anotherString) {
     return (this == anotherString) ? true
         : (anotherString != null)
@@ -20,8 +27,9 @@ function equalsIgnoreCase(anotherString) {
 }
 
 //plays one round
-function playRound(cpuChoice, playerChoice) {
-
+function playRound() {
+   let playerChoice = getPlayerChoice();
+   let cpuChoice = getComputerChoice();
     cpuChoice = cpuChoice.toLowerCase();
     playerChoice = playerChoice.toLowerCase();
     console.log(cpuChoice);
@@ -35,6 +43,9 @@ function playRound(cpuChoice, playerChoice) {
         (cpuChoice === "paper" && playerChoice === "rock") ||
         (cpuChoice === "scissors" && playerChoice === "paper")) {
         console.log("Cumputer wins");
+        computerScore++;
+    } else {
+        playerScore++;
     }
 
 //two cases of me trying to use the equalsIgnoreCase to no avail
@@ -94,4 +105,20 @@ function playRound(cpuChoice, playerChoice) {
 */
 }
 
-playRound(getComputerChoice(), playerChoice);
+//plays 5 rounds of Rock, Paper, Scissors and decides a winner
+
+function playGame(){
+for(let i = 0; i <5; i++){
+ playRound();
+ console.log(playerScore);
+ console.log(computerScore);
+}
+if(playerScore > computerScore){
+console.log("You win!")
+} else {
+    console.log("Computer Wins!");
+}
+
+}
+
+playGame();
