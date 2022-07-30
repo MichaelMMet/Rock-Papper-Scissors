@@ -12,50 +12,79 @@ function getComputerChoice() {
     }
 }
 
+function equalsIgnoreCase(anotherString) {
+    return (this == anotherString) ? true
+        : (anotherString != null)
+        && (anotherString.value.length == value.length)
+        && regionMatches(true, 0, anotherString, 0, value.length);
+}
+
 //plays one round
 function playRound(cpuChoice, playerChoice) {
 
-    //if(playerChoice.equalsIgnoreCase("Rock") && cpuChoice === "Scissors"){
-    //  console.log("Rock beats Scissors, you win!");
-    //}
+    cpuChoice = cpuChoice.toLowerCase();
+    playerChoice = playerChoice.toLowerCase();
+    console.log(cpuChoice);
 
-    //*
+
+    //checks for a tie then to see if the Computer won the round
+
+    if (playerChoice === cpuChoice) {
+        console.log("Tie");
+    } else if ((cpuChoice === "rock" && playerChoice === "scissors") ||
+        (cpuChoice === "paper" && playerChoice === "rock") ||
+        (cpuChoice === "scissors" && playerChoice === "paper")) {
+        console.log("Cumputer wins");
+    }
+
+//two cases of me trying to use the equalsIgnoreCase to no avail
+
+    /*
+        if(playerChoice.equalsIgnoreCase("Rock") && cpuChoice === "Scissors"){
+          console.log("Rock beats Scissors, you win!");
+        } else if(playerChoice.equalsIgnoreCase("Rock") && cpuChoice === "Rock"){
+            console.log("Its a tie! Try again!");
+        } else if(playerChoice.equalsIgnoreCase("Rock") && cpuChoice === "Paper"){
+    console.log("Paper beats Rock, computer wins!");
+        }
+    */
+
     /*
     switch (playerChoice) {
 
-        case playerChoice.equalsIgnoreCase("Rock"):
-            if (cpuChoice === "Rock") {
+        case playerChoice === "rock":
+            if (cpuChoice === "rock") {
                 console.log("Its a Tie! Try Again!");
             }
-            if (cpuChoice === "Paper") {
+            if (cpuChoice === "paper") {
                 console.log("Paper beats Rock, computer wins!");
             }
-            if (cpuChoice === "Scissors") {
+            if (cpuChoice === "scissors") {
                 console.log("Rock beats Scissors, you win!");
             }
             break;
 
-        case playerChoice.equalsIgnoreCase("Scissors"):
-            if (cpuChoice === "Rock") {
+        case playerChoice === "scissors":
+            if (cpuChoice === "rock") {
                 console.log("Rock beats Scissors, computer wins!");
             }
-            if (cpuChoice === "Paper") {
+            if (cpuChoice === "paper") {
                 console.log("Scissors beats Paper, you win!");
             }
-            if (cpuChoice === "Scissors") {
+            if (cpuChoice === "scissors") {
                 console.log("Its a Tie! Try Again!");
             }
 
             break;
 
-        case playerChoice.equalsIgnoreCase("Paper"):
-            if (cpuChoice === "Rock") {
+        case playerChoice === "paper":
+            if (cpuChoice === "rock") {
                 console.log("Paper beats Rock, you win!");
             }
-            if (cpuChoice === "Paper") {
+            if (cpuChoice === "paper") {
                 console.log("Its a Tie! Try Again!");
             }
-            if (cpuChoice === "Scissors") {
+            if (cpuChoice === "scissors") {
                 console.log("Scissors beats paper, computer wins!");
             }
 
