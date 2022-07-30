@@ -1,5 +1,6 @@
 //let playerChoice = prompt("Enter Rock, Paper, or Scissors");
 let computerScore = 0;
+
 let playerScore = 0;
 
 //computer picks between rock, paper, or sciccors at random
@@ -14,42 +15,38 @@ function getComputerChoice() {
     }
 }
 
-function getPlayerChoice(){
+//runs a prompt to get a choice from the user
+function getPlayerChoice() {
     let playerChoice = prompt("Enter Rock, Paper, or Scissors");
     return playerChoice;
 }
 
-function equalsIgnoreCase(anotherString) {
-    return (this == anotherString) ? true
-        : (anotherString != null)
-        && (anotherString.value.length == value.length)
-        && regionMatches(true, 0, anotherString, 0, value.length);
-}
+
 
 //plays one round
 function playRound() {
-   let playerChoice = getPlayerChoice();
-   let cpuChoice = getComputerChoice();
+    let playerChoice = getPlayerChoice();
+    let cpuChoice = getComputerChoice();
     cpuChoice = cpuChoice.toLowerCase();
     playerChoice = playerChoice.toLowerCase();
     console.log(cpuChoice);
 
 
     //checks for a tie then to see if the Computer won the round
-
     if (playerChoice === cpuChoice) {
-        console.log("Tie");
+        alert("Its a tie! Next Round!");
     } else if ((cpuChoice === "rock" && playerChoice === "scissors") ||
         (cpuChoice === "paper" && playerChoice === "rock") ||
         (cpuChoice === "scissors" && playerChoice === "paper")) {
-        console.log("Cumputer wins");
+        alert("Cumputer wins this round!");
         computerScore++;
     } else {
+        alert("You win this round!");
         playerScore++;
     }
 
-//two cases of me trying to use the equalsIgnoreCase to no avail
-
+    //two cases of me trying to use the equalsIgnoreCase to no avail, kept for future reference
+    
     /*
         if(playerChoice.equalsIgnoreCase("Rock") && cpuChoice === "Scissors"){
           console.log("Rock beats Scissors, you win!");
@@ -107,18 +104,25 @@ function playRound() {
 
 //plays 5 rounds of Rock, Paper, Scissors and decides a winner
 
-function playGame(){
-for(let i = 0; i <5; i++){
- playRound();
- console.log(playerScore);
- console.log(computerScore);
-}
-if(playerScore > computerScore){
-console.log("You win!")
-} else {
-    console.log("Computer Wins!");
-}
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        playRound();
+        console.log(playerScore);
+        console.log(computerScore);
+    }
+    if (playerScore > computerScore) {
+        alert("You win! The score was " + playerScore + "-" + computerScore);
+    } else if (computerScore > playerScore) {
+        alert("Computer Wins! The score was " + playerScore + "-" + computerScore);
+    } else {
+        alert("Its a tie! The score was " + playerScore + "-" + computerScore);
+    }
 
 }
+
+//plays the game
 
 playGame();
+
+
+
