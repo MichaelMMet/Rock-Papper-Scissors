@@ -6,21 +6,19 @@ let playerScore = 0;
 let rounds = 0;
 
 const rock = document.querySelector(".rock");
-
 const paper = document.querySelector(".paper");
-
 const scissors = document.querySelector(".scissors");
 
 const results = document.querySelector(".results");
 const score = document.querySelector(".score");
-
-
+const newGame = document.querySelector(".newGame");
+newGame.style.display = "none";
 
 rock.addEventListener('click', playGame);
 paper.addEventListener("click", playGame);
 scissors.addEventListener("click", playGame);
 
-
+newGame.addEventListener("click", makeNewGame);
 
 
 
@@ -96,12 +94,39 @@ function playGame(choice) {
 
         if (playerScore > computerScore) {
             results.textContent = "You win! The score was " + playerScore + "-" + computerScore;
+            newGame.style.display = "block";
+            rock.disabled = true;
+            paper.disabled = true;
+            scissors.disabled = true;
         } else if (computerScore > playerScore) {
             results.textContent = "Computer Wins! The score was " + playerScore + "-" + computerScore;
+            newGame.style.display = "block";
+            rock.disabled = true;
+            paper.disabled = true;
+            scissors.disabled = true;
         } else {
             results.textContent = "Its a tie! The score was " + playerScore + "-" + computerScore;
+            newGame.style.display = "block";
+            rock.disabled = true;
+            paper.disabled = true;
+            scissors.disabled = true;
         }
     }
+
+}
+
+function makeNewGame(){
+    rounds = 0;
+    playerScore = 0;
+    computerScore = 0;
+    rock.disabled = false;
+    paper.disabled = false;
+    scissors.disabled = false;
+    newGame.style.display = "none";
+
+    score.textContent = playerScore + " - " + computerScore;
+    results.textContent = "New Game! Pick a move!"
+
 
 }
 
