@@ -12,7 +12,9 @@ const scissors = document.querySelector(".scissors");
 const results = document.querySelector(".results");
 const score = document.querySelector(".score");
 const newGame = document.querySelector(".newGame");
-newGame.style.display = "none";
+//newGame.style.display = "none";
+score.textContent = playerScore + " - " + computerScore;
+results.textContent = "Its a tie! Next Round!";
 
 rock.addEventListener('click', playGame);
 paper.addEventListener("click", playGame);
