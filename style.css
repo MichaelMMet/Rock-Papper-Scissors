@@ -48,5 +48,49 @@ button{
 }
 
 
+/*
+.fa-hand-back-fist{
+    position: absolute;
+    left: 15%;
+}
+
+.fa-hand{
+    position: absolute;
+    left: 48%; 
+}
+
+.fa-hand-scissors{
+    position: absolute;
+    left: 80%; 
+}
+*/
+.pCircle{
+    height: 120px;
+    width: 120px;
+    background-color:transparent;
+    border-radius: 90px;
+    border: 10px solid rgba(12, 12, 240, 0.8);
+    position: absolute;
+}
+
+.comCircle{
+    height: 120px;
+    width: 120px;
+    background-color:transparent;
+    border-radius: 90px;
+    border: 10px solid rgba(255, 0, 0, 0.8);
+    position: absolute;
+}
+
+
+/*
+.circles{
+    display: flex;
+    left: 10%;
+    justify-content: space-around;
+    position: absolute;
+}
+*/
+
 
 
