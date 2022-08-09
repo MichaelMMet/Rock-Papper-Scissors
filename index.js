@@ -1,4 +1,3 @@
-//let playerChoice = prompt("Enter Rock, Paper, or Scissors");
 let computerScore = 0;
 
 let playerScore = 0;
@@ -69,6 +68,7 @@ function playRound(choice) {
 
 
     //checks for a tie then to see if the Computer won the round
+    //also check to see where to display the player and computer circle
     if (playerChoice === cpuChoice) {
         rounds++;
         score.textContent = playerScore + " - " + computerScore;
@@ -347,9 +347,4 @@ function makeNewGame() {
 
     score.textContent = playerScore + " - " + computerScore;
     results.textContent = "New Game! Pick a move!"
-
-
 }
-
-
-

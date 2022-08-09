@@ -63,22 +63,6 @@ button{
 }
 
 
-/*
-.fa-hand-back-fist{
-    position: absolute;
-    left: 15%;
-}
-
-.fa-hand{
-    position: absolute;
-    left: 48%; 
-}
-
-.fa-hand-scissors{
-    position: absolute;
-    left: 80%; 
-}
-*/
 .pCircle{
     height: 120px;
     width: 120px;
@@ -96,16 +80,6 @@ button{
     border: 10px solid rgba(255, 0, 0, 0.8);
     position: absolute;
 }
-
-
-/*
-.circles{
-    display: flex;
-    left: 10%;
-    justify-content: space-around;
-    position: absolute;
-}
-*/
 
 
 
