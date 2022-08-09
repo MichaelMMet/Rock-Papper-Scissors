@@ -21,6 +21,7 @@ const score = document.querySelector(".score");
 const newGame = document.querySelector(".newGame");
 newGame.style.display = "none";
 playerCircle.style.display = "none";
+comCircle.style.display = "none";
 //score.textContent = playerScore + " - " + computerScore;
 //results.textContent = "Its a tie! Next Round!";
 
@@ -106,12 +107,48 @@ function playRound(choice) {
             playerCircle.style.display = "block";
 
         }
+
+        if (cpuChoice === "Rock") {
+            let iconInfo = rockIcon.getBoundingClientRect();
+            let iconXPos = Math.floor(iconInfo.x);
+            let iconYPos = Math.floor(iconInfo.y);
+            console.log(iconInfo);
+            iconYPos -= 27;
+            iconXPos -= 27;
+            comCircle.style.top = iconYPos + "px";
+            comCircle.style.left = iconXPos + "px";
+            comCircle.style.display = "block";
+
+        } else if (cpuChoice === "Paper") {
+            let iconInfo = paperIcon.getBoundingClientRect();
+            let iconXPos = Math.floor(iconInfo.x);
+            let iconYPos = Math.floor(iconInfo.y);
+            console.log(iconInfo);
+            iconYPos -= 27;
+            iconXPos -= 27;
+            comCircle.style.top = iconYPos + "px";
+            comCircle.style.left = iconXPos + "px";
+            comCircle.style.display = "block";
+
+        } else {
+            let iconInfo = scissorsIcon.getBoundingClientRect();
+            let iconXPos = Math.floor(iconInfo.x);
+            let iconYPos = Math.floor(iconInfo.y);
+            console.log(iconInfo);
+            iconYPos -= 27;
+            iconXPos -= 27;
+            comCircle.style.top = iconYPos + "px";
+            comCircle.style.left = iconXPos + "px";
+            comCircle.style.display = "block";
+
+        }
     } else if ((cpuChoice === "Rock" && playerChoice === "Scissors") ||
         (cpuChoice === "Paper" && playerChoice === "Rock") ||
         (cpuChoice === "Scissors" && playerChoice === "Paper")) {
         rounds++;
         computerScore++;
         score.textContent = playerScore + " - " + computerScore;
+            results.textContent = cpuChoice + " beats " + playerChoice + ", computer wins this round!";
 
         if (playerChoice === "Rock") {
             let iconInfo = rockIcon.getBoundingClientRect();
@@ -145,6 +182,41 @@ function playRound(choice) {
             playerCircle.style.top = iconYPos + "px";
             playerCircle.style.left = iconXPos + "px";
             playerCircle.style.display = "block";
+
+        }
+
+        if (cpuChoice === "Rock") {
+            let iconInfo = rockIcon.getBoundingClientRect();
+            let iconXPos = Math.floor(iconInfo.x);
+            let iconYPos = Math.floor(iconInfo.y);
+            console.log(iconInfo);
+            iconYPos -= 27;
+            iconXPos -= 27;
+            comCircle.style.top = iconYPos + "px";
+            comCircle.style.left = iconXPos + "px";
+            comCircle.style.display = "block";
+
+        } else if (cpuChoice === "Paper") {
+            let iconInfo = paperIcon.getBoundingClientRect();
+            let iconXPos = Math.floor(iconInfo.x);
+            let iconYPos = Math.floor(iconInfo.y);
+            console.log(iconInfo);
+            iconYPos -= 27;
+            iconXPos -= 27;
+            comCircle.style.top = iconYPos + "px";
+            comCircle.style.left = iconXPos + "px";
+            comCircle.style.display = "block";
+
+        } else {
+            let iconInfo = scissorsIcon.getBoundingClientRect();
+            let iconXPos = Math.floor(iconInfo.x);
+            let iconYPos = Math.floor(iconInfo.y);
+            console.log(iconInfo);
+            iconYPos -= 27;
+            iconXPos -= 27;
+            comCircle.style.top = iconYPos + "px";
+            comCircle.style.left = iconXPos + "px";
+            comCircle.style.display = "block";
 
         }
     } else {
@@ -185,6 +257,40 @@ function playRound(choice) {
             playerCircle.style.display = "block";
         }
     }
+    if (cpuChoice === "Rock") {
+        let iconInfo = rockIcon.getBoundingClientRect();
+        let iconXPos = Math.floor(iconInfo.x);
+        let iconYPos = Math.floor(iconInfo.y);
+        console.log(iconInfo);
+        iconYPos -= 27;
+        iconXPos -= 27;
+        comCircle.style.top = iconYPos + "px";
+        comCircle.style.left = iconXPos + "px";
+        comCircle.style.display = "block";
+
+    } else if (cpuChoice === "Paper") {
+        let iconInfo = paperIcon.getBoundingClientRect();
+        let iconXPos = Math.floor(iconInfo.x);
+        let iconYPos = Math.floor(iconInfo.y);
+        console.log(iconInfo);
+        iconYPos -= 27;
+        iconXPos -= 27;
+        comCircle.style.top = iconYPos + "px";
+        comCircle.style.left = iconXPos + "px";
+        comCircle.style.display = "block";
+
+    } else {
+        let iconInfo = scissorsIcon.getBoundingClientRect();
+        let iconXPos = Math.floor(iconInfo.x);
+        let iconYPos = Math.floor(iconInfo.y);
+        console.log(iconInfo);
+        iconYPos -= 27;
+        iconXPos -= 27;
+        comCircle.style.top = iconYPos + "px";
+        comCircle.style.left = iconXPos + "px";
+        comCircle.style.display = "block";
+
+    }
 
 }
 
@@ -192,13 +298,8 @@ function playRound(choice) {
 
 function playGame(choice) {
     let playerChoice = choice.currentTarget.className;
-    /*let um = score.getBoundingClientRect();
-    console.log(um);
-    console.log(um.left)*/
     playRound(playerChoice);
     console.log(rounds);
-
-    // playRound(playerChoice);
 
     if (rounds >= 5) {
 
@@ -210,6 +311,7 @@ function playGame(choice) {
             paper.disabled = true;
             scissors.disabled = true;
             playerCircle.style.display = "none";
+            comCircle.style.display = "none";
 
         } else if (computerScore > playerScore) {
             results.textContent = "Computer Wins! The score was " + playerScore + "-" + computerScore;
@@ -218,6 +320,7 @@ function playGame(choice) {
             paper.disabled = true;
             scissors.disabled = true;
             playerCircle.style.display = "none";
+            comCircle.style.display = "none";
 
         } else {
             results.textContent = "Its a tie! The score was " + playerScore + "-" + computerScore;
@@ -226,6 +329,7 @@ function playGame(choice) {
             paper.disabled = true;
             scissors.disabled = true;
             playerCircle.style.display = "none";
+            comCircle.style.display = "none";
 
         }
     }
@@ -247,6 +351,5 @@ function makeNewGame() {
 
 }
 
-//plays the game
 
 
