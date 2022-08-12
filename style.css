@@ -64,8 +64,8 @@ button{
 
 
 .pCircle{
-    height: 120px;
-    width: 120px;
+    height: 140px;
+    width: 140px;
     background-color:transparent;
     border-radius: 90px;
     border: 10px solid rgba(12, 12, 240, 0.8);
@@ -81,5 +81,31 @@ button{
     position: absolute;
 }
 
+.trans{
+    animation: circle 2s;
+}
 
+@keyframes circle{
+    0%{
+        border-color: transparent;
+    }
+
+    100% {
+        border-color: blue;
+    }
+}
+
+.comCircleTrans{
+    animation: cpuCircleTrans 2s;
+}
+
+@keyframes cpuCircleTrans{
+    0%{
+        border-color: transparent;
+    }
+
+    100%{
+        border-color: red;
+    }
+}
 

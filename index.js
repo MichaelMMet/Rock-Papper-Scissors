@@ -74,41 +74,49 @@ function playRound(choice) {
         score.textContent = playerScore + " - " + computerScore;
         results.textContent = "Its a tie! Next Round!";
         if (playerChoice === "Rock") {
+            playerCircle.classList.remove("trans");
             let iconInfo = rockIcon.getBoundingClientRect();
             let iconXPos = Math.floor(iconInfo.x);
             let iconYPos = Math.floor(iconInfo.y);
             console.log(iconInfo);
-            iconYPos -= 27;
-            iconXPos -= 27;
+            iconYPos -= 36;
+            iconXPos -= 36;
             playerCircle.style.top = iconYPos + "px";
             playerCircle.style.left = iconXPos + "px";
+            playerCircle.classList.add("trans");
             playerCircle.style.display = "block";
 
         } else if (playerChoice === "Paper") {
+            playerCircle.classList.remove("trans");
             let iconInfo = paperIcon.getBoundingClientRect();
             let iconXPos = Math.floor(iconInfo.x);
             let iconYPos = Math.floor(iconInfo.y);
             console.log(iconInfo);
-            iconYPos -= 27;
-            iconXPos -= 27;
+            iconYPos -= 36;
+            iconXPos -= 36;
             playerCircle.style.top = iconYPos + "px";
             playerCircle.style.left = iconXPos + "px";
+            playerCircle.classList.add("trans");
             playerCircle.style.display = "block";
 
         } else {
+            playerCircle.classList.remove("trans");
+
             let iconInfo = scissorsIcon.getBoundingClientRect();
             let iconXPos = Math.floor(iconInfo.x);
             let iconYPos = Math.floor(iconInfo.y);
             console.log(iconInfo);
-            iconYPos -= 27;
-            iconXPos -= 27;
+            iconYPos -= 36;
+            iconXPos -= 36;
             playerCircle.style.top = iconYPos + "px";
             playerCircle.style.left = iconXPos + "px";
+            playerCircle.classList.add("trans");
             playerCircle.style.display = "block";
 
         }
 
         if (cpuChoice === "Rock") {
+            comCircle.classList.remove("comCircleTrans");
             let iconInfo = rockIcon.getBoundingClientRect();
             let iconXPos = Math.floor(iconInfo.x);
             let iconYPos = Math.floor(iconInfo.y);
@@ -117,9 +125,11 @@ function playRound(choice) {
             iconXPos -= 27;
             comCircle.style.top = iconYPos + "px";
             comCircle.style.left = iconXPos + "px";
+            comCircle.classList.add("comCircleTrans");
             comCircle.style.display = "block";
 
         } else if (cpuChoice === "Paper") {
+            comCircle.classList.remove("comCircleTrans");
             let iconInfo = paperIcon.getBoundingClientRect();
             let iconXPos = Math.floor(iconInfo.x);
             let iconYPos = Math.floor(iconInfo.y);
@@ -128,9 +138,11 @@ function playRound(choice) {
             iconXPos -= 27;
             comCircle.style.top = iconYPos + "px";
             comCircle.style.left = iconXPos + "px";
+            comCircle.classList.add("comCircleTrans");
             comCircle.style.display = "block";
 
         } else {
+            comCircle.classList.remove("comCircleTrans");
             let iconInfo = scissorsIcon.getBoundingClientRect();
             let iconXPos = Math.floor(iconInfo.x);
             let iconYPos = Math.floor(iconInfo.y);
@@ -139,6 +151,7 @@ function playRound(choice) {
             iconXPos -= 27;
             comCircle.style.top = iconYPos + "px";
             comCircle.style.left = iconXPos + "px";
+            comCircle.classList.add("comCircleTrans");
             comCircle.style.display = "block";
 
         }
@@ -148,44 +161,54 @@ function playRound(choice) {
         rounds++;
         computerScore++;
         score.textContent = playerScore + " - " + computerScore;
-            results.textContent = cpuChoice + " beats " + playerChoice + ", computer wins this round!";
+        results.textContent = cpuChoice + " beats " + playerChoice + ", computer wins this round!";
 
         if (playerChoice === "Rock") {
+            playerCircle.classList.remove("trans");
+
             let iconInfo = rockIcon.getBoundingClientRect();
             let iconXPos = Math.floor(iconInfo.x);
             let iconYPos = Math.floor(iconInfo.y);
             console.log(iconInfo);
-            iconYPos -= 27;
-            iconXPos -= 27;
+            iconYPos -= 36;
+            iconXPos -= 36;
             playerCircle.style.top = iconYPos + "px";
             playerCircle.style.left = iconXPos + "px";
+            playerCircle.classList.add("trans");
             playerCircle.style.display = "block";
 
         } else if (playerChoice === "Paper") {
+            playerCircle.classList.remove("trans");
+
             let iconInfo = paperIcon.getBoundingClientRect();
             let iconXPos = Math.floor(iconInfo.x);
             let iconYPos = Math.floor(iconInfo.y);
             console.log(iconInfo);
-            iconYPos -= 27;
-            iconXPos -= 27;
+            iconYPos -= 36;
+            iconXPos -= 36;
             playerCircle.style.top = iconYPos + "px";
             playerCircle.style.left = iconXPos + "px";
+            playerCircle.classList.add("trans");
             playerCircle.style.display = "block";
 
         } else {
+            playerCircle.classList.remove("trans");
+
             let iconInfo = scissorsIcon.getBoundingClientRect();
             let iconXPos = Math.floor(iconInfo.x);
             let iconYPos = Math.floor(iconInfo.y);
             console.log(iconInfo);
-            iconYPos -= 27;
-            iconXPos -= 27;
+            iconYPos -= 36;
+            iconXPos -= 36;
             playerCircle.style.top = iconYPos + "px";
             playerCircle.style.left = iconXPos + "px";
+            playerCircle.classList.add("trans");
             playerCircle.style.display = "block";
 
         }
 
         if (cpuChoice === "Rock") {
+            comCircle.classList.remove("comCircleTrans");
             let iconInfo = rockIcon.getBoundingClientRect();
             let iconXPos = Math.floor(iconInfo.x);
             let iconYPos = Math.floor(iconInfo.y);
@@ -194,9 +217,11 @@ function playRound(choice) {
             iconXPos -= 27;
             comCircle.style.top = iconYPos + "px";
             comCircle.style.left = iconXPos + "px";
+            comCircle.classList.add("comCircleTrans");
             comCircle.style.display = "block";
 
         } else if (cpuChoice === "Paper") {
+            comCircle.classList.remove("comCircleTrans");
             let iconInfo = paperIcon.getBoundingClientRect();
             let iconXPos = Math.floor(iconInfo.x);
             let iconYPos = Math.floor(iconInfo.y);
@@ -205,9 +230,11 @@ function playRound(choice) {
             iconXPos -= 27;
             comCircle.style.top = iconYPos + "px";
             comCircle.style.left = iconXPos + "px";
+            comCircle.classList.add("comCircleTrans");
             comCircle.style.display = "block";
 
         } else {
+            comCircle.classList.remove("comCircleTrans");
             let iconInfo = scissorsIcon.getBoundingClientRect();
             let iconXPos = Math.floor(iconInfo.x);
             let iconYPos = Math.floor(iconInfo.y);
@@ -216,6 +243,7 @@ function playRound(choice) {
             iconXPos -= 27;
             comCircle.style.top = iconYPos + "px";
             comCircle.style.left = iconXPos + "px";
+            comCircle.classList.add("comCircleTrans");
             comCircle.style.display = "block";
 
         }
@@ -226,38 +254,48 @@ function playRound(choice) {
         results.textContent = playerChoice + " beats " + cpuChoice + ", You win this round!";
 
         if (playerChoice === "Rock") {
+            playerCircle.classList.remove("trans");
+
             let iconInfo = rockIcon.getBoundingClientRect();
             let iconXPos = Math.floor(iconInfo.x);
             let iconYPos = Math.floor(iconInfo.y);
             console.log(iconInfo);
-            iconYPos -= 27;
-            iconXPos -= 27;
+            iconYPos -= 36;
+            iconXPos -= 36;
             playerCircle.style.top = iconYPos + "px";
             playerCircle.style.left = iconXPos + "px";
+            playerCircle.classList.add("trans");
             playerCircle.style.display = "block";
         } else if (playerChoice === "Paper") {
+            playerCircle.classList.remove("trans");
+
             let iconInfo = paperIcon.getBoundingClientRect();
             let iconXPos = Math.floor(iconInfo.x);
             let iconYPos = Math.floor(iconInfo.y);
             console.log(iconInfo);
-            iconYPos -= 27;
-            iconXPos -= 27;
+            iconYPos -= 36;
+            iconXPos -= 36;
             playerCircle.style.top = iconYPos + "px";
             playerCircle.style.left = iconXPos + "px";
+            playerCircle.classList.add("trans");
             playerCircle.style.display = "block";
         } else {
+            playerCircle.classList.remove("trans");
+
             let iconInfo = scissorsIcon.getBoundingClientRect();
             let iconXPos = Math.floor(iconInfo.x);
             let iconYPos = Math.floor(iconInfo.y);
             console.log(iconInfo);
-            iconYPos -= 27;
-            iconXPos -= 27;
+            iconYPos -= 36;
+            iconXPos -= 36;
             playerCircle.style.top = iconYPos + "px";
             playerCircle.style.left = iconXPos + "px";
+            playerCircle.classList.add("trans");
             playerCircle.style.display = "block";
         }
     }
     if (cpuChoice === "Rock") {
+        comCircle.classList.remove("comCircleTrans");
         let iconInfo = rockIcon.getBoundingClientRect();
         let iconXPos = Math.floor(iconInfo.x);
         let iconYPos = Math.floor(iconInfo.y);
@@ -266,9 +304,11 @@ function playRound(choice) {
         iconXPos -= 27;
         comCircle.style.top = iconYPos + "px";
         comCircle.style.left = iconXPos + "px";
+        comCircle.classList.add("comCircleTrans");
         comCircle.style.display = "block";
 
     } else if (cpuChoice === "Paper") {
+        comCircle.classList.remove("comCircleTrans");
         let iconInfo = paperIcon.getBoundingClientRect();
         let iconXPos = Math.floor(iconInfo.x);
         let iconYPos = Math.floor(iconInfo.y);
@@ -277,9 +317,11 @@ function playRound(choice) {
         iconXPos -= 27;
         comCircle.style.top = iconYPos + "px";
         comCircle.style.left = iconXPos + "px";
+        comCircle.classList.add("comCircleTrans");
         comCircle.style.display = "block";
 
     } else {
+        comCircle.classList.remove("comCircleTrans");
         let iconInfo = scissorsIcon.getBoundingClientRect();
         let iconXPos = Math.floor(iconInfo.x);
         let iconYPos = Math.floor(iconInfo.y);
@@ -288,6 +330,7 @@ function playRound(choice) {
         iconXPos -= 27;
         comCircle.style.top = iconYPos + "px";
         comCircle.style.left = iconXPos + "px";
+        comCircle.classList.add("comCircleTrans");
         comCircle.style.display = "block";
 
     }
@@ -344,6 +387,9 @@ function makeNewGame() {
     paper.disabled = false;
     scissors.disabled = false;
     newGame.style.display = "none";
+    playerCircle.style.display = "none";
+    comCircle.style.display = "none";
+
 
     score.textContent = playerScore + " - " + computerScore;
     results.textContent = "New Game! Pick a move!"
